@@ -8,21 +8,22 @@ export default function FormComponent(props) {
         <div className="container">
             <form onSubmit={props.handleOnSubmit}>
             <div className="form-group">
-                <H1>
-                 Register
-                </H1>
+             <H1>
+             Register
+             </H1>
             <input
-                type="email" 
-                className="form-control"
-                placeholder="killenmedallt@hotmail.com" 
-                name="email" 
-                value={props.email} 
-                onChange={props.handleOnChange}
-                required
+             type="email" 
+             className="form-control"
+             placeholder="killenmedallt@hotmail.com" 
+             name="email" 
+             value={props.email} 
+             onChange={props.handleOnChange}
+             required
             />
             </div>
             <div className="form-group">
-            <input type="password"
+            <input 
+             type="password"
              className="form-control"
              placeholder="Enter Password" 
              name="password" 
@@ -40,17 +41,18 @@ export default function FormComponent(props) {
             </div>
             <div className="form-group">
             <input 
-            type="text" 
-            className="form-control"
-            placeholder="Enter Firstname" 
-            name="firstName" 
-            value={props.firstName} 
-            onChange={props.handleOnChange}
-            required
+             type="text" 
+             className="form-control"
+             placeholder="Enter Firstname" 
+             name="firstName" 
+             value={props.firstName} 
+             onChange={props.handleOnChange}
+             required
             />
             </div>
             <div className="form-group">
-            <input type="text"
+            <input
+             type="text"
              className="form-control"
              placeholder="Enter Lastname" 
              name="lastName" 
@@ -61,7 +63,7 @@ export default function FormComponent(props) {
             <input className="btn btn-success m-1  btn-lg btn-block" type="submit"/>
             </div>
             </form> 
-        <p>Already have an account?<Link to="/login"> Login</Link></p> 
+            <p>Already have an account?<Link to="/login"> Login</Link></p> 
         </div>
     )
 }

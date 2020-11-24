@@ -12,7 +12,6 @@ export default function PostListPage() {
         Forumkit.getPostList()
         .then((res) => res.json())
          .then((data) => {
-            // console.log(data)
              setPostList(data.results)
     })
 }
@@ -21,17 +20,15 @@ export default function PostListPage() {
         getPostList()
     }, [])
 
-    console.log(postList)
     return (
         <div className="container text-center">
             <H1>Posts</H1>
             <hr></hr>
             {postList && postList.map((postItem, index)=>{
-              console.log(postItem)
               return (
                   <>
                   <H3>{postItem.title}</H3>
-                  <p>{postItem.content}</p>
+                  <p> {postItem.content}</p>
                   <Link className="btn btn-primary btn-sm active" key={index} to={`/post/${postItem.id}`}>Click to read more</Link>
                   <hr></hr>
                   </>

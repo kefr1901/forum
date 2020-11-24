@@ -26,12 +26,12 @@ function App() {
           <Route exact path="/register">
             <RegisterPage />
           </Route>
-          <Route exact path="/login">
-            <LoginPage />
+          <Route exact path="/home">
+            <Navbar />
+            <HomePage />
           </Route>
           <Route exact path="/">
-          <Navbar/> 
-            <HomePage />
+            <LoginPage />
           </Route>
           <Route exact path="/posts">
           <Navbar/> 

@@ -19,7 +19,6 @@ export default function RegisterPage() {
         Authkit.registerUser(formData)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data)
                 history.push('/login')
             })
 
@@ -33,7 +32,6 @@ export default function RegisterPage() {
             })
 
     }
-    //console.log(countryList)
 
     useEffect(() => {
         getCountryList()

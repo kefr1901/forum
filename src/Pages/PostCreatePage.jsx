@@ -27,7 +27,6 @@ export default function PostCreatePage() {
         Forumkit.getCategoryList()
             .then((res) => res.json())
             .then((data) => {
-                //console.log(data)
                 setCategoryList(data.results)
             })
     }
@@ -36,7 +35,6 @@ export default function PostCreatePage() {
         getCategoryList()
     },[])
     
-   // console.log(categoryList)
     return (
         <div>
             <CreatePostForm 

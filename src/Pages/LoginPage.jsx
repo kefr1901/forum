@@ -6,7 +6,6 @@ import LoginForm from '../Components/LoginForm';
 export default function LoginPage() {
 
     const [loginFormData, setLoginFormData] = useState({});
-
     const history = useHistory();
 
     function handleOnChange(e) {
@@ -18,15 +17,13 @@ export default function LoginPage() {
         Authkit.loginUser(loginFormData)
             .then((res) => res.json())
             .then((data) => {
-               //console.log(data)
                Authkit.setToken(data.token)
                if(data.token){
-                   history.push('/')
+                   history.push('/home')
                }
             })
     }
     return (
-
         <div>
             <LoginForm 
             handleOnChange={handleOnChange}

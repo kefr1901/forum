@@ -6,9 +6,7 @@ const USER_LIST = `${ROOT_URL}/api/v1/countries/`
 
 export default class AuthKit {
     static registerUser(formData) {
-        console.log("kommer in i reg user: " + formData)
         const payload = formData
-        console.log(payload)
         return fetch(USER_CREATE_URL, {
             headers: this.getPublicHeaders(),
             method: 'POST',
@@ -17,9 +15,7 @@ export default class AuthKit {
     }
 
     static loginUser(formData) {
-        console.log("kommer in i login")
         const payload = formData
-        console.log(payload)
 		return fetch(USER_LOGIN_URL, {
 			headers: this.getPublicHeaders(),
 			method: 'POST',
@@ -64,7 +60,5 @@ export default class AuthKit {
         static removeToken() {
             return localStorage.removeItem('token')
         }
-    
-      
         
 }

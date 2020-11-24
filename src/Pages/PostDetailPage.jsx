@@ -2,13 +2,11 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../Components/Navbar'
 import RepliesComponent from '../Components/RepliesComponent'
 import Forumkit from '../Data/Forumkit'
-import { H4 } from '../Theme/StyledComponents'
 import { H2 } from '../Theme/StyledComponents'
 
 
 export default function PostDetailPage(props) {
   const postId = props.match.params.id
-  //console.log(props)
   const [postItem, setPostItem] = useState(null)
   const [replies, setReplies] = useState(null)
   const [formData, setFormData] = useState({
@@ -21,7 +19,6 @@ export default function PostDetailPage(props) {
     Forumkit.getPostDetail(postId)
       .then(res => res.json())
       .then(data => {
-        //console.log(data)
         setPostItem(data)
       })
   }
@@ -30,7 +27,6 @@ export default function PostDetailPage(props) {
     Forumkit.getPostReplies(postId)
       .then(res => res.json())
       .then(data => {
-        console.log(data.results)
         setReplies(data.results)
       })
   }
@@ -54,7 +50,6 @@ export default function PostDetailPage(props) {
     fetchPostDetail()
   }, [])
 
-  console.log(postItem)
   return (
     <>
       <Navbar />
@@ -73,7 +68,6 @@ export default function PostDetailPage(props) {
                 <hr></hr>
               </>
             }
-          
 
           <H2>Comment this post</H2>
           <div className="form-group">
